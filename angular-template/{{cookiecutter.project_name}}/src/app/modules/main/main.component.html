@@ -1,0 +1,35 @@
+<div>
+  <h4 class="text title">{{ '{{' }} 'global.main.title' | transloco {{ '}}' }}</h4>
+
+  <div class='cards'>
+    <div class='t-card-common-shadow custom-card'>
+      <div class='heading'>
+        <h6 class="text">{{ '{{' }}cardTitle{{ '}}' }}</h6>
+      </div>
+      <div class='content'>
+        <t-input [value]="cardTitle" (inputed)='inputChanged($event)'></t-input>
+      </div>
+    </div>
+
+    <div class='t-card-common-shadow custom-card'>
+      <div class='heading'>
+        <h6 class="text">Header state</h6>
+      </div>
+      <div class='content buttons'>
+        <button class='t-btn t-btn-primary' (click)="headerToggle(false)">Show</button>
+        <button class='t-btn t-btn-primary' (click)="headerToggle(true)">Hide</button>
+        <button class='t-btn t-btn-primary' (click)="headerToggle()">Toggle</button>
+      </div>
+    </div>
+
+    <div class='t-card-common-shadow custom-card'>
+      <div class='heading'>
+        <h6 class="text">Select Lang</h6>
+      </div>
+      <div class='content'>
+        <t-select (selectionChanged)="handleSelect($event.detail)" [selectedItem]='currentLang' [options]='selectOptions'></t-select>
+      </div>
+    </div>
+  </div>
+
+</div>

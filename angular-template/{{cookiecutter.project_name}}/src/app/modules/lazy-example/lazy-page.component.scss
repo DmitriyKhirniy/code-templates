@@ -1,0 +1,13 @@
+.title {
+  margin-bottom: 32px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 32px;
+
+  .t-card-common-shadow {
+    max-width: 30%;
+    padding: 32px;
+  }
+}

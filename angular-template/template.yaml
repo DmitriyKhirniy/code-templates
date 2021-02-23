@@ -1,0 +1,34 @@
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: angular-microfrontend-single-spa-template
+  title: Angular SingleSpa Template Custom
+  description: Create a microfrontend app with angular and single spa
+  tags:
+    - recommended
+    - angular
+    - singlespa
+spec:
+  owner: web@example.com
+  templater: cookiecutter
+  type: website
+  path: '.'
+  schema:
+    required:
+      - component_id
+      - description
+      - graphql_client
+    properties:
+      component_id:
+        title: Name
+        type: string
+        description: Unique name of the component
+      description:
+        title: Description
+        type: string
+        description: Help others understand what this website is for.
+      graphql_client:
+        title: Use GraphQL client
+        type: boolean
+        description: Include GraphQL client with an example
+        default: true
