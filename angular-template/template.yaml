@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: angular-single-spa-template10
   title: Angular SingleSpa Template10
-  description: Create a microfrontend app with angular and single spa
+  description: Create a microfrontend app with angular and single spa 11
   tags:
     - recommended
     - angular
