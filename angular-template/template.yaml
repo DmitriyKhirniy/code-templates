@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Template
 metadata:
-  name: angular-microfrontend-single-spa-template7
-  title: Angular SingleSpa Template Custom7
+  name: angular-single-spa-template10
+  title: Angular SingleSpa Template10
   description: Create a microfrontend app with angular and single spa
   tags:
     - recommended
