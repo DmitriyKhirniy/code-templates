@@ -1,4 +1,5 @@
 {
-  "project_name": "angular-dimas",
+  "project_name": "angular",
+  "project_description": "angular application",
   "graphql_client": true
 }
