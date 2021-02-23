@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Template
 metadata:
-  name: angular-microfrontend-single-spa-template5
-  title: Angular SingleSpa Template Custom5
+  name: angular-microfrontend-single-spa-template6
+  title: Angular SingleSpa Template Custom6
   description: Create a microfrontend app with angular and single spa
   tags:
     - recommended
@@ -30,6 +30,6 @@ spec:
       graphql_client:
         title: Use GraphQL client
         type: string
-        enum: [ 'true', 'false' ]
+        enum: [ 'yes', 'no' ]
         description: Include GraphQL client with an example
         default: 'true'

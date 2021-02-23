@@ -1,7 +1,7 @@
 {
   "project_name": "angular",
   "project_description": "angular application",
-  "graphql_client": true,
+  "graphql_client": "yes",
   "destination": {
     "git": {
       "owner": "dump",

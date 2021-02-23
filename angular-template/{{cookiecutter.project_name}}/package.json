@@ -27,12 +27,12 @@
     "@angular/platform-browser": "11.0.4",
     "@angular/platform-browser-dynamic": "11.0.4",
     "@angular/router": "11.0.4",
-{%- if cookiecutter.graphql_client == "true" -%}
+{%- if cookiecutter.graphql_client == "yes" -%}
     "@apollo/client": "^3.0.0",
 {% endif %}
     "@galileo/common-typings": "0.0.7",
     "@ngneat/transloco": "^2.19.1",
-{%- if cookiecutter.graphql_client == "true" -%}
+{%- if cookiecutter.graphql_client == "yes" -%}
     "apollo-angular": "^2.3.0",
     "graphql": "^15.0.0",
 {% endif %}

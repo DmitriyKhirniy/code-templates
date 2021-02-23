@@ -13,7 +13,7 @@ export const ApplicationRoutes: Routes = [
     path: 'main',
     component: MainComponent,
   },
-  {%- if cookiecutter.graphql_client == "true" -%}
+  {%- if cookiecutter.graphql_client == "yes" -%}
   {
     path: 'lazy',
     loadChildren: () => import('./modules/lazy-example/lazy-page.module')

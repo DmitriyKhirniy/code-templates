@@ -9,7 +9,7 @@ def remove(filepath):
     elif os.path.isdir(filepath):
         shutil.rmtree(filepath)
 
-create_graphql = '{{cookiecutter.graphql_client}}' == 'true'
+create_graphql = '{{cookiecutter.graphql_client}}' == 'yes'
 
 if not create_graphql:
     # remove top-level file inside the generated folder
