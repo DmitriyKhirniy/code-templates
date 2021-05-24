@@ -1,0 +1,13 @@
+{
+  "component_id": "angular",
+  "description": "angular application",
+  "graphql_client": "yes",
+  "destination": {
+    "git": {
+      "owner": "dump",
+      "name": "dump"
+    }
+  },
+  "storePath": "dump",
+  "owner": "dump"
+}

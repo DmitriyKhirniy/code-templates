@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{cookiecutter.component_id}}
+  description: {{cookiecutter.description}}
+  annotations:
+    github.com/project-slug: {{cookiecutter.destination.git.owner + "/" + cookiecutter.destination.git.name}}
+    backstage.io/techdocs-ref: url:{{cookiecutter.storePath}}
+  tags:
+    - angular
+    - singlespa
+spec:
+  type: website
+  lifecycle: experimental
+  owner: {{cookiecutter.owner | jsonify}}
