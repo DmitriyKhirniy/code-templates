@@ -1,6 +1,5 @@
 {
-  "component_id": "angular",
-  "description": "angular application",
+  "name": "angular",
   "graphql_client": "yes",
   "destination": {
     "git": {
