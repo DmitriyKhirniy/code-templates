@@ -99,7 +99,7 @@ spec:
         allowedHosts: ['github.com']
         description: 'This is {{ parameters.name }}'
         repoUrl: '{{ parameters.repoUrl }}'
-        collaborators: '{{ parameters.collaborators | jsonify }}'
+        collaborators: '{{ json parameters.collaborators }}'
 
     - id: register
       name: Register
