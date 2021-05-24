@@ -1,6 +1,6 @@
 {
-  "name": "{{cookiecutter.component_id}}",
-  "description": "{{cookiecutter.description}}",
+  "name": "{{cookiecutter.name}}",
+  "description": "{{cookiecutter.name}}",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
@@ -10,12 +10,12 @@
     "lint": "ng lint",
     "lint:es": "eslint .. --ext ts -c .eslintrc.js",
     "e2e": "ng e2e",
-    "build": "ng run {{cookiecutter.component_id}}:singleSpaBuild --output-hashing none --configuration production",
-    "build:spa": "ng run {{cookiecutter.component_id}}:build --configuration production",
-    "serve:single-spa": "ng run {{cookiecutter.component_id}}:singleSpaRun --disable-host-check --live-reload false",
+    "build": "ng run {{cookiecutter.name}}:singleSpaBuild --output-hashing none --configuration production",
+    "build:spa": "ng run {{cookiecutter.name}}:build --configuration production",
+    "serve:single-spa": "ng run {{cookiecutter.name}}:singleSpaRun --disable-host-check --live-reload false",
     "start:prod": "node server.js",
     "sprites": "svg-sprite --config sprite-config.json src/assets/images/**/*.svg src/assets/images/icons/**/**/*.svg",
-    "eslint": "ng run {{cookiecutter.component_id}}:eslint"
+    "eslint": "ng run {{cookiecutter.name}}:eslint"
   },
   "dependencies": {
     "@angular-builders/custom-webpack": "10.0.1",

@@ -1,6 +1,6 @@
-## {{cookiecutter.component_id}}
+## {{cookiecutter.name}}
 
-###{{cookiecutter.description}}
+###{{cookiecutter.name}}
 
 ####This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
 ####It's custom starter with additional dependencies:

@@ -12,7 +12,7 @@ import { SidebarService } from '@core/services/sidebar';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
-  title = '{{cookiecutter.component_id}}';
+  title = '{{cookiecutter.name}}';
 
   config: unknown;
 

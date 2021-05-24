@@ -29,9 +29,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title '{{cookiecutter.component_id}}'`, () => {
+  it(`should have as title '{{cookiecutter.name}}'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('{{cookiecutter.component_id}}');
+    expect(app.title).toEqual('{{cookiecutter.name}}');
   });
 });

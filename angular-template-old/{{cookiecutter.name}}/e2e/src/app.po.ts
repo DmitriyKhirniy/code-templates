@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('{{cookiecutter.component_id}}-root h4')).getText() as Promise<string>;
+    return element(by.css('{{cookiecutter.name}}-root h4')).getText() as Promise<string>;
   }
 }

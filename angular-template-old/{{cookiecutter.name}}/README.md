@@ -1,4 +1,4 @@
-# What is {{cookiecutter.component_id}}?
+# What is {{cookiecutter.name}}?
 
 It is a custom web application starter to allow you to build a single page application (SPA) using microfrontends.
 
@@ -14,10 +14,10 @@ It is a custom web application starter to allow you to build a single page appli
 
 ## Documentation
 
-- [Overview]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.component_id%7D%7D/docs/index.md)
-- [How to]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.component_id%7D%7D/docs/howto.md)
-- [Troubleshooting]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.component_id%7D%7D/docs/troubleshooting.md)
-- [Changelog]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.component_id%7D%7D/docs/changelog.md)
+- [Overview]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/index.md)
+- [How to]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/howto.md)
+- [Troubleshooting]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/troubleshooting.md)
+- [Changelog]({{cookiecutter.storePath}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/changelog.md)
 
 ## Contributing
 Contributions are what make our products so great. Any contributions you make are greatly appreciated.
