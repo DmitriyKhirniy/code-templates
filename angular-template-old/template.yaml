@@ -29,6 +29,12 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        graphql_client:
+          title: Use GraphQL client
+          type: string
+          enum: [ 'yes', 'no' ]
+          description: Include GraphQL client with an example
+          default: 'yes'
         collaborators:
           title: Collaborators
           description: Provide users with permissions
