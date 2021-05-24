@@ -4,7 +4,7 @@ metadata:
   name: {{cookiecutter.name}}
   description: {{cookiecutter.name}}
   annotations:
-    github.com/project-slug: {{cookiecutter.destination.git.owner + "/" + cookiecutter.destination.git.name}}
+    github.com/project-slug: {{cookiecutter.owner + "/" + cookiecutter.destination.git.name}}
     backstage.io/techdocs-ref: url:{{cookiecutter.repoUrl}}
   tags:
     - angular
