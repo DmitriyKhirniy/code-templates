@@ -83,6 +83,7 @@ spec:
           owner: '{{ parameters.owner }}'
           destination: '{{ parseRepoUrl parameters.repoUrl }}'
           graphql_client: '{{ parameters.graphql_client }}'
+          repoUrl: '{{ parameters.repoUrl }}'
 
     - id: fetch-docs
       name: Fetch Docs
