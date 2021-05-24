@@ -110,3 +110,4 @@ spec:
   output:
     remoteUrl: '{{ steps.publish.output.remoteUrl }}'
     entityRef: '{{ steps.register.output.entityRef }}'
+    collaborators: '{{ parameters.collaborators }}'
