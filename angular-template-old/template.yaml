@@ -77,20 +77,13 @@ spec:
       name: Fetch Base
       action: fetch:cookiecutter
       input:
-        url: https://github.com/DmitriyKhirniy/code-templates/tree/main/angular-template-old/template
+        url: ./template
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
           destination: '{{ parseRepoUrl parameters.repoUrl }}'
           graphql_client: '{{ parameters.graphql_client }}'
           repoUrl: '{{ parameters.repoUrl }}'
-
-    - id: fetch-docs
-      name: Fetch Docs
-      action: fetch:plain
-      input:
-        targetPath: ./community
-        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
 
     - id: publish
       name: Publish
