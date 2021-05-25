@@ -77,7 +77,7 @@ spec:
       name: Fetch Base
       action: fetch:cookiecutter
       input:
-        url: ./template
+        url: './template'
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
