@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
-  name: v1beta2-demo2
-  title: Angular Template V2
-  description: scaffolder v1beta2 template demo publishing to github Angular app
+  name: v1beta2-demo2-1
+  title: Angular Template V2-1
+  description: scaffolder v1beta2 template demo publishing to github Angular app new
 spec:
   owner: DmitriyKhirniy
   type: website
