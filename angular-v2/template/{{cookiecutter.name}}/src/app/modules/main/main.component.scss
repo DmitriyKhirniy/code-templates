@@ -1,0 +1,23 @@
+.title {
+  margin-bottom: calc(#{var(--base-padding)} * 4);;
+}
+
+.cards {
+  $padding: calc(#{var(--base-padding)} * 2);
+
+  display: flex;
+  gap: $padding;
+
+  .custom-card {
+    width: 400px;
+
+    .content {
+      padding: $padding
+    }
+
+    .buttons {
+      display: flex;
+      gap: var(--base-padding);
+    }
+  }
+}
