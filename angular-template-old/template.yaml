@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
-  name: v1beta2-demo2-1
-  title: Angular Template V2-1
+  name: customDimaAngularTemplate
+  title: Custom Dima Angular template
   description: scaffolder v1beta2 template demo publishing to github Angular app new
 spec:
   owner: DmitriyKhirniy
@@ -77,7 +77,7 @@ spec:
       name: Fetch Base
       action: fetch:cookiecutter
       input:
-        url: './skeleton'
+        url: ./skeleton
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
