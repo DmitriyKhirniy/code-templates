@@ -77,7 +77,7 @@ spec:
       name: Fetch Base
       action: fetch:cookiecutter
       input:
-        url: ./skeleton
+        url: https://github.com/DmitriyKhirniy/code-templates/tree/main/angular-template-old/skeleton
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
