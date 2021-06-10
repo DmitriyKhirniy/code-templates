@@ -101,6 +101,13 @@ spec:
         repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
         catalogInfoPath: '/catalog-info.yaml'
 
+    - id: customAction
+        name: CustomAcction
+        action: galileo-digital:create-file
+        input:
+          contents: 'custom content by dima'
+          filename: 'custom_file.text'
+
   output:
     remoteUrl: '{{ steps.publish.output.remoteUrl }}'
     entityRef: '{{ steps.register.output.entityRef }}'
