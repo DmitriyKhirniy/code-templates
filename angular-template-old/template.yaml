@@ -26,11 +26,11 @@ spec:
 #          type: string
           description: Owner of the component
           type: array
-            ui:options:
-              orderable: false
-            items:
-              - Galileo-Backstage
-              - GalileoDigital
+          ui:options:
+            orderable: false
+          items:
+            - Galileo-Backstage
+            - GalileoDigital
          # ui:field: OwnerPicker
 #          ui:options:
 #            allowedKinds:
