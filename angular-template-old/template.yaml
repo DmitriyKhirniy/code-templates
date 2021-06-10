@@ -105,6 +105,7 @@ spec:
         contents: 'custom content by dima'
         filename: 'custom_file.text'
         repoUrl: '{{ parameters.repoUrl }}'
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
 
     - id: register
       name: Register
