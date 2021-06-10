@@ -85,6 +85,15 @@ spec:
           graphql_client: '{{ parameters.graphql_client }}'
           repoUrl: '{{ parameters.repoUrl }}'
 
+    - id: customAction
+      name: CustomAcction
+      action: galileo-digital:create-file
+      input:
+        contents: 'custom content by dima'
+        filename: 'custom_file.text'
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+        repoUrl: '{{ parameters.repoUrl }}'
+
     - id: publish
       name: Publish
       action: publish:github
@@ -93,14 +102,6 @@ spec:
         description: 'This is {{ parameters.name }}'
         repoUrl: '{{ parameters.repoUrl }}'
         collaborators: '{{ json parameters.collaborators }}'
-
-    - id: customAction
-      name: CustomAcction
-      action: galileo-digital:create-file
-      input:
-        contents: 'custom content by dima'
-        filename: 'custom_file.text'
-        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
 
     - id: register
       name: Register
