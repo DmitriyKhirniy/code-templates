@@ -94,19 +94,20 @@ spec:
         repoUrl: '{{ parameters.repoUrl }}'
         collaborators: '{{ json parameters.collaborators }}'
 
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
-        catalogInfoPath: '/catalog-info.yaml'
-
     - id: customAction
       name: CustomAcction
       action: galileo-digital:create-file
       input:
         contents: 'custom content by dima'
         filename: 'custom_file.text'
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+        catalogInfoPath: '/catalog-info.yaml'
 
   output:
     remoteUrl: '{{ steps.publish.output.remoteUrl }}'
