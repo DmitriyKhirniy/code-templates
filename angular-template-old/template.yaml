@@ -91,7 +91,6 @@ spec:
       input:
         contents: 'custom content by dima'
         filename: 'custom_file.text'
-        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
         repoUrl: '{{ parameters.repoUrl }}'
 
     - id: publish
