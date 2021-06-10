@@ -27,7 +27,7 @@ spec:
           description: Owner of the component
           type: string
           enum: [ 'Galileo-Backstage', 'GalileoDigital' ]
-          default: 'yes'
+          default: 'Galileo-Backstage'
          # ui:field: OwnerPicker
 #          ui:options:
 #            allowedKinds:
