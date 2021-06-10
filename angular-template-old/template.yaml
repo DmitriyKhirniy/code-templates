@@ -23,12 +23,19 @@ spec:
             rows: 5
         owner:
           title: Owner
-          type: string
+#          type: string
           description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
+          type: array
+            ui:options:
+              orderable: false
+            items:
+              - Galileo-Backstage
+              - GalileoDigital
+         # ui:field: OwnerPicker
+#          ui:options:
+#            allowedKinds:
+#              - Group
+
         graphql_client:
           title: Use GraphQL client
           type: string
