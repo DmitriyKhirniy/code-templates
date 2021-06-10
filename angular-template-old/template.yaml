@@ -25,12 +25,9 @@ spec:
           title: Owner
 #          type: string
           description: Owner of the component
-          type: array
-          ui:options:
-            orderable: false
-          items:
-            - Galileo-Backstage
-            - GalileoDigital
+          type: string
+          enum: [ 'Galileo-Backstage', 'GalileoDigital' ]
+          default: 'yes'
          # ui:field: OwnerPicker
 #          ui:options:
 #            allowedKinds:
