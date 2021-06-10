@@ -99,7 +99,7 @@ spec:
         collaborators: '{{ json parameters.collaborators }}'
 
     - id: customAction
-      name: CustomAcction
+      name: Configure Github repository
       action: galileo-digital:create-file
       input:
         contents: 'custom content by dima'
