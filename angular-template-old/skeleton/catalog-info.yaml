@@ -5,7 +5,7 @@ metadata:
   description: {{cookiecutter.name}}
   annotations:
     github.com/project-slug: {{cookiecutter.owner + "/" + cookiecutter.name}}
-    backstage.io/techdocs-ref: url:{{cookiecutter.storePath}}
+    backstage.io/techdocs-ref: url:https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}
   tags:
     - angular
     - singlespa
