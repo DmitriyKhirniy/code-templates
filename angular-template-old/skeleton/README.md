@@ -14,10 +14,10 @@ It is a custom web application starter to allow you to build a single page appli
 
 ## Documentation
 
-- [Overview]({{cookiecutter.repoUrl}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/index.md)
-- [How to]({{cookiecutter.repoUrl}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/howto.md)
-- [Troubleshooting]({{cookiecutter.repoUrl}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/troubleshooting.md)
-- [Changelog]({{cookiecutter.repoUrl}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/changelog.md)
+- [Overview](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/index.md)
+- [How to](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/howto.md)
+- [Troubleshooting](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/troubleshooting.md)
+- [Changelog](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/develop/templates/angular-template/%7B%7Bcookiecutter.name%7D%7D/docs/changelog.md)
 
 ## Contributing
 Contributions are what make our products so great. Any contributions you make are greatly appreciated.
