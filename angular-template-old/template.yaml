@@ -13,6 +13,7 @@ spec:
       required:
         - name
         - owner
+        - collaborators
       properties:
         name:
           title: Name
