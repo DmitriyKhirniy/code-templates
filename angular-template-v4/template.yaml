@@ -76,6 +76,21 @@ spec:
           description: '{{ parameters.description }}'
           repoUrl: 'github.com?owner={{parameters.owner}}&repo={{parameters.name}}'
 
+    name: Write Catalog information
+      action: catalog:write
+      input:
+        component:
+          apiVersion: 'backstage.io/v1alpha1'
+          kind: Component
+          metadata:
+            name: '{{ parameters.name }}'
+            annotations:
+              github.com/project-slug: '{{ projectSlug parameters.repoUrl }}'
+          spec:
+            type: service
+            lifecycle: production
+            owner: '{{ parameters.owner }}'
+
     - id: publish
       name: Publish
       action: publish:github
