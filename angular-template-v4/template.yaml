@@ -1,0 +1,100 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+metadata:
+  name: customDimaAngularTemplateV4
+  title: [New] Angular template V4
+  description: scaffolder v1beta2 template demo publishing to github Angular app new
+spec:
+  owner: DmitriyKhirniy
+  type: website
+
+  parameters:
+    - title: Fill in some steps
+      required:
+        - name
+        - owner
+        - collaborators
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+#          type: string
+          description: Owner of the component
+          type: string
+          enum: [ 'Galileo-Backstage', 'GalileoDigital' ]
+          default: 'Galileo-Backstage'
+         # ui:field: OwnerPicker
+#          ui:options:
+#            allowedKinds:
+#              - Group
+
+        graphql_client:
+          title: Use GraphQL client
+          type: string
+          enum: [ 'yes', 'no' ]
+          description: Include GraphQL client with an example
+          default: 'yes'
+        collaborators:
+          title: Collaborators
+          description: Provide users with permissions
+          type: array
+          ui:options:
+            orderable: false
+          items:
+            type: object
+            required:
+              - username
+              - access
+            properties:
+              access:
+                type: string
+                description: The type of access for the user
+                default: pull
+                enum:
+                  - push
+                  - pull
+                  - admin
+                  - maintain
+                  - triage
+              username:
+                type: string
+                description: The username or group
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:cookiecutter
+      input:
+        url: https://github.com/DmitriyKhirniy/code-templates/tree/main/angular-template-v3/skeleton
+        values:
+          name: '{{ parameters.name }}'
+          owner: '{{ parameters.owner }}'
+          graphql_client: '{{ parameters.graphql_client }}'
+          repoUrl: '{{ parameters.name }}'
+
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: '{{ parameters.description }}'
+        repoUrl: '{{ parameters.name }}'
+        collaborators: '{{ json parameters.collaborators }}'
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+#        repoContentsUrl: '{{ steps.customAction.output.repoContentsUrl }}'
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    remoteUrl: '{{ steps.publish.output.remoteUrl }}'
+    entityRef: '{{ steps.register.output.entityRef }}'

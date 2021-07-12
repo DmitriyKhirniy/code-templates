@@ -1,0 +1,150 @@
+# Build, copy and deploy
+trigger:
+  branches:
+    include:
+    - develop
+
+pr:
+- develop
+
+variables:
+  srvconAzureRM: 'GalileoSandbox'
+  storageaccountname:  'portaluigalileodevelop'
+
+stages:
+  - stage: tests
+    
+    jobs:
+
+    - job: Tests
+    
+      pool:
+       vmImage: 'ubuntu-latest'
+ 
+      steps:
+      # Angular Starter npm cache verify
+      - task: Npm@1
+        displayName: 'Starter npm cache verify'
+        inputs:
+          command: custom
+          customCommand: cache verify
+
+      # Angular Starter npm ci
+      - task: Npm@1
+        displayName: 'Starter npm ci'
+        inputs:
+          command: custom
+          customCommand: ci
+
+      # Angular Starter npm test
+      - task: Npm@1
+        displayName: 'Starter npm tests'
+        inputs:
+          command: custom
+          customCommand: run test-ci
+
+  - stage: eslint
+    
+    jobs:
+
+    - job: EsLint
+    
+      pool:
+       vmImage: 'ubuntu-latest'
+ 
+      steps:
+      # Angular Starter npm cache verify
+      - task: Npm@1
+        displayName: 'Starter npm cache verify'
+        inputs:
+          command: custom
+          customCommand: cache verify
+
+      # Angular Starter npm ci
+      - task: Npm@1
+        displayName: 'Starter npm ci'
+        inputs:
+          command: custom
+          customCommand: ci
+          
+      # Angular Starter npm eslint
+      - task: Npm@1
+        displayName: 'Starter npm eslint'
+        inputs:
+          command: custom
+          customCommand: run eslint
+
+  - stage: build
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop')
+    jobs:
+    - job: build    
+      pool:
+        vmImage: 'ubuntu-latest'
+
+      steps:
+      - task: NodeTool@0
+        inputs:
+         versionSpec: '14.x'
+        displayName: 'Install Node.js'
+
+      # Angular Starter npm cache verify
+      - task: Npm@1
+        displayName: 'Starter npm cache verify'
+        inputs:
+          command: custom
+          customCommand: cache verify
+
+      # Angular Starter npm install, build and copy
+      - task: Npm@1
+        displayName: 'Starter npm ci'
+        inputs:
+          command: custom
+          customCommand: ci
+
+      - task: Npm@1
+        displayName: 'Starter npm build'
+        inputs:
+          command: custom
+          customCommand: run build
+
+      - task: CopyFiles@2
+        displayName: 'Starter Copy Files'
+        inputs:
+          SourceFolder: './dist'
+          TargetFolder: '$(build.artifactstagingdirectory)/starter'
+          CleanTargetFolder: true
+      
+      - task: PublishBuildArtifacts@1      
+        inputs:
+          PathtoPublish: '$(build.artifactstagingdirectory)'
+          ArtifactName: 'build'
+
+      workspace:
+        clean: all
+
+  - stage: deploy
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop')
+    jobs:
+    - deployment: deploy
+      pool:
+        vmImage: 'ubuntu-latest'
+      environment: 'Deploy to Storage'
+      strategy:
+       runOnce:
+         deploy:
+          steps:
+
+            - download: current
+              artifact: build
+
+            - task: AzureCLI@2
+              displayName: Az File Copy to Storage
+              inputs:
+                azureSubscription: $(srvconAzureRM)
+                scriptType: 'bash'
+                scriptLocation: inlineScript
+                inlineScript: |
+                  az storage blob upload-batch \
+                  --destination \$web \
+                  --account-name "$(storageaccountname)" \
+                  --source "$(Pipeline.Workspace)/build"    
