@@ -76,7 +76,8 @@ spec:
           description: '{{ parameters.description }}'
           repoUrl: 'github.com?owner={{parameters.owner}}&repo={{parameters.name}}'
 
-    - name: Write Catalog information
+    - id: catalog-write
+      name: Write Catalog information
       action: catalog:write
       input:
         component:
