@@ -1,0 +1,93 @@
+{
+  "name": "{{cookiecutter.name}}",
+  "description": "{{cookiecutter.name}}",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "serve": "ng serve",
+    "test-ci": "ng test --karma-config=karma.conf.ci.js --no-progress",
+    "test": "ng test",
+    "lint": "ng lint",
+    "lint:es": "eslint .. --ext ts -c .eslintrc.js",
+    "e2e": "ng e2e",
+    "build": "ng run {{cookiecutter.name}}:singleSpaBuild --output-hashing none --configuration production",
+    "build:spa": "ng run {{cookiecutter.name}}:build --configuration production",
+    "serve:single-spa": "ng run {{cookiecutter.name}}:singleSpaRun --disable-host-check --live-reload false",
+    "start:prod": "node server.js",
+    "sprites": "svg-sprite --config sprite-config.json src/assets/images/**/*.svg src/assets/images/icons/**/**/*.svg",
+    "eslint": "ng run {{cookiecutter.name}}:eslint"
+  },
+  "dependencies": {
+    "@angular-builders/custom-webpack": "10.0.1",
+    "@angular/animations": "11.0.4",
+    "@angular/common": "11.0.4",
+    "@angular/compiler": "11.0.4",
+    "@angular/core": "11.0.4",
+    "@angular/forms": "11.0.4",
+    "@angular/platform-browser": "11.0.4",
+    "@angular/platform-browser-dynamic": "11.0.4",
+    "@angular/router": "11.0.4",
+{%- if cookiecutter.graphql_client == "yes" -%}
+    "@apollo/client": "^3.0.0",
+{% endif %}
+    "@galileo/common-typings": "0.0.7",
+    "@ngneat/transloco": "^2.19.1",
+{%- if cookiecutter.graphql_client == "yes" -%}
+    "apollo-angular": "^2.3.0",
+    "graphql": "^15.0.0",
+{% endif %}
+    "rxjs": "6.5.5",
+    "single-spa": "5.6.1",
+    "single-spa-angular": "4.6.0",
+    "systemjs-webpack-interop": "2.1.2",
+    "tslib": "^2.0.0",
+    "zone.js": "0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.1100.4",
+    "@angular-eslint/builder": "0.5.0-beta.4",
+    "@angular-eslint/eslint-plugin": "0.5.0-beta.4",
+    "@angular-eslint/eslint-plugin-template": "0.5.0-beta.4",
+    "@angular-eslint/schematics": "0.5.0-beta.4",
+    "@angular-eslint/template-parser": "0.5.0-beta.4",
+    "@angular/cli": "11.0.4",
+    "@angular/compiler-cli": "11.0.4",
+    "@angular/language-service": "11.0.4",
+    "@types/jasmine": "~3.6.0",
+    "@types/jasminewd2": "2.0.8",
+    "@types/node": "12.12.64",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
+    "codelyzer": "^6.0.0",
+    "eslint": "7.11.0",
+    "eslint-config-airbnb-typescript": "11.0.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jasmine": "4.1.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "4.3.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.1.1",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "10.4.0",
+    "prettier": "2.1.2",
+    "protractor": "~7.0.0",
+    "ts-node": "7.0.1",
+    "tslint": "~6.1.0",
+    "typescript": "4.0.5"
+  },
+  "optionalDependencies": {
+    "svg-sprite": "^1.4.0",
+    "svgo": "^1.0.5"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
+  }
+}

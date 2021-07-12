@@ -1,0 +1,10 @@
+{
+  "global": {
+    "main": {
+      "title": "It's Angular Microfrontend starter app"
+    },
+    "language": {
+      "title": "Text example on: {{ '{{' }} language {{ '}}' }}"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "dest": "src/assets",
+  "log": "verbose",
+  "mode": {
+    "symbol": {
+      "sprite": "sprite",
+      "bust": false,
+      "dest": "images",
+      "shape": {
+        "dimension": {
+          "attributes": false,
+          "transform": [
+            {"svgo": {
+              "plugins": [
+                {"removeEmptyAttrs": true},
+                {"cleanupAttrs": true},
+                {"cleanupEnableBackground": true},
+                {"removeUselessStrokeAndFill": true},
+                {"cleanupNumericValues" : true},
+                {"removeNonInheritableGroupAttrs": true },
+                {"removeAttrs": {"attrs": "fill"}}
+              ]
+            }}
+          ]
+        }
+      }
+    }
+  }
+}
