@@ -98,15 +98,15 @@ spec:
         description: 'This is {{ parameters.name }}'
         repoUrl: '{{ parameters.repoUrl }}'
         collaborators: '{{ json parameters.collaborators }}'
-
-    - id: customAction
-      name: Configure Github repository
-      action: galileo-digital:create-file
-      input:
-        contents: 'custom content by dima'
-        filename: 'custom_file.text'
-        repoUrl: '{{ parameters.repoUrl }}'
-        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+#
+#    - id: customAction
+#      name: Configure Github repository
+#      action: galileo-digital:create-file
+#      input:
+#        contents: 'custom content by dima'
+#        filename: 'custom_file.text'
+#        repoUrl: '{{ parameters.repoUrl }}'
+#        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
 
     - id: register
       name: Register

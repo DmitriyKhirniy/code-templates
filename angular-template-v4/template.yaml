@@ -79,7 +79,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: '{{ parameters.description }}'
-        repoUrl: '{{ parameters.name }}'
+        repoUrl: 'github.com/{{ parameters.owner }}?repo={{ parameters.name }}'
         collaborators: '{{ json parameters.collaborators }}'
 
     - id: register
