@@ -1,6 +1,6 @@
 {
   "name": "{{cookiecutter.name}}",
-  "description": "{{cookiecutter.name}}",
+  "description": "{{cookiecutter.description}}",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
