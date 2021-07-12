@@ -14,15 +14,5 @@ export const getSidebarConfig = (router: Router, ngZone: NgZone) => ({
         ngZone.run<void>(() => router.navigate(['/']));
       },
     },
-    {%- if cookiecutter.graphql_client == "yes" -%}
-    {
-      id: '002',
-      iconName: 'device-hub',
-      title: 'GraphQL Weather',
-      action: () => {
-        ngZone.run<void>(() => router.navigate(['/lazy']));
-      },
-    },
-{% endif %}
   ],
 });

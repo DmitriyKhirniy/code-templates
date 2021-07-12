@@ -13,12 +13,5 @@ export const ApplicationRoutes: Routes = [
     path: 'main',
     component: MainComponent,
   },
-  {%- if cookiecutter.graphql_client == "yes" -%}
-  {
-    path: 'lazy',
-    loadChildren: () => import('./modules/lazy-example/lazy-page.module')
-      .then((m) => m.LazyPageModule),
-  },
-{% endif %}
   { path: '**', component: EmptyRouteComponent },
 ];

@@ -16,9 +16,6 @@ import { CoreModule } from '@core/core.module';
 import { EmptyRouteModule } from './modules/empty-route';
 import { MainModule } from './modules/main/main.module';
 import { svgProviderFactory, SvgService } from '@core/services/svg';
-{%- if cookiecutter.graphql_client == "yes" -%}
-import { GraphQLModule } from './graphql.module';
-{% endif %}
 
 function propsFactory(injector: Injector): Partial<SingleSpaProps> {
   const tokenService = injector.get(TokenService);
@@ -39,9 +36,6 @@ function propsFactory(injector: Injector): Partial<SingleSpaProps> {
     EmptyRouteModule,
     MainModule,
     LocalizationModule,
-    {%- if cookiecutter.graphql_client == "yes" -%}
-    GraphQLModule,
-    {% endif %}
     HttpClientModule,
   ],
   providers: [

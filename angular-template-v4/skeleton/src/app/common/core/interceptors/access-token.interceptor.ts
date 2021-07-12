@@ -18,7 +18,6 @@ export class AccessTokenInterceptor implements HttpInterceptor {
     const newRequest = request.clone({
       setHeaders: {
         Authorization: bearer,
-        'x-api-key': '0a3c506270ff421f521aeebe556dc1', /* It's for an example and temporary, needed for GraphQL call */
       },
     });
 

@@ -14,10 +14,10 @@ It is a custom web application starter to allow you to build a single page appli
 
 ## Documentation
 
-- [Overview](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/main/docs/index.md)
-- [How to](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/main/docs/howto.md)
-- [Troubleshooting](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/main/docs/troubleshooting.md)
-- [Changelog](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/main/docs/changelog.md)
+- [Overview](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/master/docs/index.md)
+- [How to](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/master/docs/howto.md)
+- [Troubleshooting](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/master/docs/troubleshooting.md)
+- [Changelog](https://github.com/{{cookiecutter.owner + "/" + cookiecutter.name}}/blob/master/docs/changelog.md)
 
 ## Contributing
 Contributions are what make our products so great. Any contributions you make are greatly appreciated.
