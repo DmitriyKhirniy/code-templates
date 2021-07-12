@@ -18,10 +18,18 @@ spec:
         name:
           title: Name
           type: string
-          description: Unique name of the component
+          description: Unique name of the component and repo
+          pattern: ^[a-z0-9-]+$
           ui:autofocus: true
           ui:options:
             rows: 5
+
+        description:
+          title: Description
+          type: string
+          pattern: ^[^\s][\w\s-]+[^\s]$
+          description: Help others understand what these docs are about.
+
         owner:
           title: Owner
           description: Owner of the component
@@ -29,15 +37,9 @@ spec:
           enum: [ 'Galileo-Backstage', 'GalileoDigital' ]
           default: 'Galileo-Backstage'
 
-        graphql_client:
-          title: Use GraphQL client
-          type: string
-          enum: [ 'yes', 'no' ]
-          description: Include GraphQL client with an example
-          default: 'yes'
         collaborators:
           title: Collaborators
-          description: Provide users with permissions
+          description: Provide github teams with permissions
           type: array
           ui:options:
             orderable: false
@@ -49,7 +51,7 @@ spec:
             properties:
               access:
                 type: string
-                description: The type of access for the user
+                description: The type of access for the github team
                 default: pull
                 enum:
                   - push
@@ -59,7 +61,8 @@ spec:
                   - triage
               username:
                 type: string
-                description: The username or group
+                pattern: ^[^\s][\w\s-]+[^\s]$
+                description: The github team
 
   steps:
     - id: fetch-base
@@ -70,8 +73,7 @@ spec:
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
-          graphql_client: '{{ parameters.graphql_client }}'
-          repoUrl: '{{ parameters.name }}'
+          repoUrl: 'github.com?owner={{parameters.owner}}&repo={{parameters.name}}'
 
     - id: publish
       name: Publish
@@ -90,5 +92,9 @@ spec:
         catalogInfoPath: '/catalog-info.yaml'
 
   output:
-    remoteUrl: '{{ steps.publish.output.remoteUrl }}'
-    entityRef: '{{ steps.register.output.entityRef }}'
+    links:
+      - title: Repository
+        url: '{{ steps.publish.output.remoteUrl }}'
+      - title: Open in catalog
+        icon: 'catalog'
+        entityRef: '{{ steps.register.output.entityRef }}'
