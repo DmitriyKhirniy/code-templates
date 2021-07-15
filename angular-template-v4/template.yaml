@@ -3,15 +3,15 @@ kind: Template
 metadata:
   name: customDimaAngularTemplateV4
   title: New Angular template V4
-  description: 'The template includes
-
-                Language: TypeScript
-                Web application framework: Angular
-                Front-end microservices framework: single-spa
-                UI components: common-ui library components
-                GraphQL API client: Apollo Client
-                Static code analysis tool: ESLint
-                Sample documentation'
+  description: 'The template includes /n
+                <ul>
+                <li>Language: TypeScript</li>
+                <li>Web application framework: Angular</li>
+                <li>Front-end microservices framework: single-spa</li>
+                <li>UI components: common-ui library components</li>
+                <li>GraphQL API client: Apollo Client</li>
+                <li>Static code analysis tool: ESLint</li>
+                Sample documentation </u>'
 spec:
   owner: DmitriyKhirniy
   type: website
