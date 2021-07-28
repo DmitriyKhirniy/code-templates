@@ -84,22 +84,6 @@ spec:
           description: '{{ parameters.description }}'
           repoUrl: 'github.com?owner={{parameters.owner}}&repo={{parameters.name}}'
 
-    - id: catalog-write
-      name: Write Catalog information
-      action: catalog:write
-      input:
-        component:
-          apiVersion: 'backstage.io/v1alpha1'
-          kind: Component
-          metadata:
-            name: '{{ parameters.name }}'
-            annotations:
-              github.com/project-slug: '{{ projectSlug parameters.repoUrl }}'
-          spec:
-            type: service
-            lifecycle: production
-            owner: '{{ parameters.owner }}'
-
     - id: publish
       name: Publish
       action: publish:github
@@ -108,6 +92,13 @@ spec:
         description: '{{ parameters.description }}'
         repoUrl: 'github.com?owner={{parameters.owner}}&repo={{parameters.name}}'
         collaborators: '{{ json parameters.collaborators }}'
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
+        catalogInfoPath: '/catalog-info.yaml'
 
   output:
     links:
